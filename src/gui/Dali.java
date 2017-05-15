@@ -16,6 +16,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import filter.Negative;
+import filter.Blur;
+import filter.Denoising;
 import filter.Emboss;
 import filter.GrayScale;
 import filter.Original;
@@ -150,11 +152,47 @@ public class Dali extends JFrame{
 				}
 			}
 		});
-		
-
+		JMenuItem blur = new JMenuItem("blur");
+		blur.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent a) {
+				if(imageI != null) {
+					Blur bl = new Blur(imageI);
+					imageF = bl.getNewImage();
+					Component[] pre = containerImageF.getComponents();
+					if(pre.length == 1) {
+						containerImageF.add(new ImageCanvas(imageF), null);
+						containerImageF.validate();
+					} else {
+						containerImageF.remove(1);
+						containerImageF.add(new ImageCanvas(imageF), null);
+						containerImageF.validate();
+					}
+				}
+			}
+		});
+		JMenuItem denoising = new JMenuItem("denoising");
+		denoising.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent a) {
+				if(imageI != null) {
+					Denoising dn = new Denoising(imageI);
+					imageF = dn.getNewImage();
+					Component[] pre = containerImageF.getComponents();
+					if(pre.length == 1) {
+						containerImageF.add(new ImageCanvas(imageF), null);
+						containerImageF.validate();
+					} else {
+						containerImageF.remove(1);
+						containerImageF.add(new ImageCanvas(imageF), null);
+						containerImageF.validate();
+					}
+				}
+			}
+		});
 		edit.add(emboss);
 		edit.add(grayScale);
 		edit.add(negative);
+		edit.add(blur);
+		edit.add(denoising);
 		menuBar.add(file);
 		menuBar.add(edit);
 		

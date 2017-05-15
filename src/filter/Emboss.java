@@ -20,10 +20,9 @@ public class Emboss extends Filter{
 	@Override
 	public void process() {
 		// TODO Auto-generated method stub
-		 System.out.println(this.imageI.getType());
 		this.imageF = new BufferedImage(this.imageI.getWidth(),
 				this.imageI.getHeight(), imageI.getType());
-		for (int i = 1; i < this.imageF.getWidth() - 1; i++) {
+		for(int i = 1; i < this.imageF.getWidth() - 1; i++) {
 			for(int j = 1; j < this.imageF.getHeight() - 1; j++) {
 				Color c1 = new Color(this.imageI.getRGB(i + 1, j + 1));
 				Color c2 = new Color(this.imageI.getRGB(i - 1,  j - 1));
