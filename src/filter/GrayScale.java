@@ -28,7 +28,7 @@ public class GrayScale extends Filter{
 	}
 	
 	public String toString() {
-		String s = "This filter changes initial image into gray scale image.";
+		String s = "This filter is mainly for girls.";
 		return s;
 	}
 }

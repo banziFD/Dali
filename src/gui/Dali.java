@@ -24,10 +24,6 @@ import filter.Original;
 import java.io.File;
 
 public class Dali extends JFrame{
-	public static void main(String[] args) throws Exception{
-		new Dali();
-	}
-	
 	private BufferedImage imageI;
 	private BufferedImage imageF;;
 	
