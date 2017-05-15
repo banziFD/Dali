@@ -22,6 +22,11 @@ public abstract class Filter {
 		}
 	}
 	
+	public Filter(BufferedImage img) {
+		this.imageI = img;
+		process();
+	}
+	
 	public BufferedImage getNewImage() {
 		return imageF;
 	}

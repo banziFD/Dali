@@ -12,6 +12,10 @@ public class Negative extends Filter{
 	public Negative(File f) {
 		super(f);
 	}
+	
+	public Negative(BufferedImage img) {
+		super(img);
+	}
 
 	@Override
 	public void process() {

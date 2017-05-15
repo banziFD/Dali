@@ -12,6 +12,10 @@ public class Emboss extends Filter{
 	public Emboss(File f) {
 		super(f);
 	}
+	
+	public Emboss(BufferedImage img) {
+		super(img);
+	}
 
 	@Override
 	public void process() {

@@ -12,6 +12,10 @@ public class GrayScale extends Filter{
 		super(f);
 	}
 	
+	public GrayScale(BufferedImage img) {
+		super(img);
+	}
+	
 	public void process() {
 		this.imageF = new BufferedImage(this.imageI.getWidth(), 
 				this.imageI.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
